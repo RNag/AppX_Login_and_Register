@@ -6,7 +6,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void printDatabase(){
-        String dString = dbHandler.databaseToString();
+        //String dString = dbHandler.databaseToString();
         //testVal.setText(dString);
         inputAddr.setText("");
         inputPass.setText("");
@@ -59,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
                             Toast.LENGTH_SHORT).show();
                     return;
                 }
-                InputData user = new InputData(inputAddr.getText().toString(),inputPass.getText().toString());
-                dbHandler.addUser(user);
+                //InputData user = new InputData(inputAddr.getText().toString(),inputPass.getText().toString());
+                //dbHandler.addUser(user);
                 Toast.makeText(this, "Your information has been saved.", Toast.LENGTH_SHORT).show();
                 printDatabase();
                 break;
 
-            case R.id.valButton:
+            case R.id.loginButton:
                 if (dbHandler.ValidateDataEntry(inputAddr.getText().toString(),inputPass.getText().toString())) {
                     Toast.makeText(this, "A successful match was found for the email/password combination.",
                             Toast.LENGTH_LONG).show();
